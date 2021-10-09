@@ -3,11 +3,22 @@ package PartII;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+//-----------------------------------------------------
+//Assignment 1
+//© Tejaswini Devireddy , Manimaran Palani
+//Written by: Tejaswini Devireddy - 40186127
+//          Manimaran Palani - 40167543
+//-----------------------------------------------------
 public class ComputerDriver {
 
 	static final String PASSWORD = "password";
 	static Computer inventory[];
 
+	/**
+	 * Get the space available in the inventory
+	 * @param maxComputers
+	 * @return the number of computers can be stored
+	 */
 	public static int getAvailableSpace(int maxComputers) {
 		int existingCount = 0;
 		for (int i = 0; i < inventory.length; i++) {
@@ -21,6 +32,10 @@ public class ComputerDriver {
 
 	}
 
+	/**
+	 * Get the info of computers from user and add to the inventory
+	 * @param noOfComputers
+	 */
 	public static void addComputerInfo(int noOfComputers) {
 
 		Scanner s = new Scanner(System.in);
@@ -61,6 +76,11 @@ public class ComputerDriver {
 
 	}
 
+	/**
+	 * Find the computer in the inventory that has the
+	 * price cheaper than the given price
+	 * @param price
+	 */
 	public static void findCheaperThan(double price) {
 		
 		boolean present = false;
@@ -77,6 +97,10 @@ public class ComputerDriver {
 		}
 	}
 
+	/**
+	 * Find the computers that has given brand name
+	 * @param brandName
+	 */
 	public static void findComputersBy(String brandName) {
 		
 		boolean found = false;
@@ -93,6 +117,10 @@ public class ComputerDriver {
 		}
 	}
 
+	/**
+	 * Display the info of computers that has the given computer number
+	 * @param computerNo
+	 */
 	public static void displayComputerInfo(int computerNo) {
 		System.out.println("Computer : " + computerNo + "\nBrand : " + inventory[computerNo].getBrand() + ""
 				+ "\nModel : " + inventory[computerNo].getModel() + "\nSN : " + inventory[computerNo].getSn() + ""

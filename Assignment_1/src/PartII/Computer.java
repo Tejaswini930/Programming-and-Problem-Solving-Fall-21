@@ -1,5 +1,12 @@
 package PartII;
 
+//-----------------------------------------------------
+//Assignment 1
+//© Tejaswini Devireddy , Manimaran Palani
+//Written by: Tejaswini Devireddy - 40186127
+//        Manimaran Palani - 40167543
+//-----------------------------------------------------
+
 public class Computer {
 
 	private String brand;
@@ -8,13 +15,42 @@ public class Computer {
 	private double price;
 	private static int count;
 	
-	Computer(String brand, String model, long sn, double price)
+	
+	//default constructor
+	public Computer() {
+		this.brand = "DefaultBrand";
+		this.model = "DefaultModel";
+		this.sn = 99999999;
+		this.price = 99999;
+		setCount();
+	}
+	
+	//parameterized constructor
+	public Computer(String brand, String model, long sn, double price)
 	{
 		this.brand = brand;
 		this.model = model;
 		this.sn = sn;
 		this.price = price;
-		count++;
+		setCount();
+	}
+	
+	//copy constructor
+	public Computer(Computer compObj) {
+		this.brand = compObj.brand;
+		this.model = compObj.model;
+		this.sn = compObj.sn;
+		this.price = compObj.price;
+		setCount();
+	}
+	
+	
+	public static int getCount() {
+		return count;
+	}
+
+	public static void setCount() {
+		Computer.count++;
 	}
 
 	public void setBrand(String brand) {
@@ -50,7 +86,7 @@ public class Computer {
 	}
 	
 	public static int findNumberOfCreatedComputers() {
-		return count;
+		return getCount();
 	}
 	
 	public boolean equals(Computer compObj) {
